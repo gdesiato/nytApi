@@ -1,4 +1,4 @@
-package com.example.nytApi.service;
+package com.example.nytApi.services;
 
 import com.example.nytApi.model.Article;
 import com.example.nytApi.model.NytResponse;

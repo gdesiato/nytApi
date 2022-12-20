@@ -12,10 +12,8 @@ import java.util.List;
 @NoArgsConstructor
 public class Media {
 
-    @JsonProperty("type")
     private String type;
     private String subtype;
-    @JsonProperty("caption")
     private String caption;
     private String url;
     @JsonProperty("media-metadata")

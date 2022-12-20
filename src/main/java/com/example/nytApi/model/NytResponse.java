@@ -1,6 +1,5 @@
 package com.example.nytApi.model;
 
-import com.example.nytApi.model.Article;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
