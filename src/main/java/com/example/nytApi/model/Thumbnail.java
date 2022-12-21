@@ -12,4 +12,8 @@ public class Thumbnail {
 
     @JsonProperty("url")
     private String url;
+    @JsonProperty("height")
+    int height;
+    @JsonProperty("width")
+    int width;
 }
