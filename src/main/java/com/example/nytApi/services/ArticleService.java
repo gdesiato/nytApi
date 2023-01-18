@@ -1,9 +1,12 @@
 package com.example.nytApi.services;
 
 import com.example.nytApi.model.Article;
+import com.example.nytApi.model.Doc;
 import com.example.nytApi.model.NytResponse;
+import com.example.nytApi.model.NytSearchResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,6 +16,8 @@ import java.util.List;
 @Service
 public class ArticleService {
 
+    // @Value will look in our application.property file for this specific property
+    // if it will find the property, it will assign it to this value
     @Value("${api_key}")
     private String apikey;
 
@@ -37,5 +42,12 @@ public class ArticleService {
         } else {
             return results;
         }
+    }
+
+    public List<Doc> getSearchResults(String searchText){
+        ResponseEntity<NytSearchResponse> response = restTemplate.getForEntity(mostPopularUrl + "api-key=" + apikey, NytSearchResponse.class);
+        List<Doc> results = new ArrayList<>();
+
+        return null;
     }
 }
