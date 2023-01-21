@@ -16,8 +16,8 @@ public class Doc {
     private Long id;
     @JsonProperty("web_url")
     private String webUrl;
-    private List<Headline> headline;
-    private List<Byline> byline;
+    private Headline headline;
+    private Byline byline;
 
     @JsonProperty("abstract")
     private String summary;

@@ -14,5 +14,5 @@ public class NytSearchResponse {
 
     private String status;
     private String copyright;
-    private List<Response> response;
+    private Response response;
 }

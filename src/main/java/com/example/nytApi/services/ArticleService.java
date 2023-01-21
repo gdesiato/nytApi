@@ -33,12 +33,13 @@ public class ArticleService {
         if (response != null && response.getStatus().equals("OK")) {
             //loop through articles - and if there is media - and if there is mediametadata (.size-1 to get the last one)
             //multiply height and width and take the result
-            for (Article article : results) {
-                for (Article media : results) {
-                    article.getMedia().get(0).getMediaMetadata().get(0).getUrl();
-                }
+            for (Article article : response.getResults()) {
+                    article.setImageUrl(article.getMedia().get(0).getMediaMetadata().
+                            get(article.getMedia().get(0).getMediaMetadata().size()-1)
+                            .getUrl());
+                results.add(article);
             }
-            return response.getResults();
+            return results;
         } else {
             return results;
         }
