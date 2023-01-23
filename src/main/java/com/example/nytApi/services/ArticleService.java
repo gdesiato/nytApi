@@ -24,6 +24,9 @@ public class ArticleService {
     @Value("${mostPopularUrl}")
     private String mostPopularUrl;
 
+    @Value("${articleSearchUrl}")
+    private String articleSearchUrl;
+
     @Autowired
     RestTemplate restTemplate;
 
@@ -46,8 +49,10 @@ public class ArticleService {
     }
 
     public List<Doc> getSearchResults(String searchText){
-        ResponseEntity<NytSearchResponse> response = restTemplate.getForEntity(mostPopularUrl + "api-key=" + apikey, NytSearchResponse.class);
+        ResponseEntity<NytSearchResponse> response = restTemplate
+                .getForEntity(articleSearchUrl + searchText + "api-key=" + apikey, NytSearchResponse.class);
         List<Doc> results = new ArrayList<>();
+        if (response != null && response.getStatusCode().equals("OK")) {
 
         return null;
     }
